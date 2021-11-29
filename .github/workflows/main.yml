@@ -15,7 +15,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
    build-and-publish:
-    name: build and publish
+    name: build and publish 
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,3 +42,8 @@ jobs:
           docker tag deploy:latest 156138231205.dkr.ecr.eu-central-1.amazonaws.com/backend:v1
           docker push 156138231205.dkr.ecr.eu-central-1.amazonaws.com/backend:v1
           echo "::set-output name=image::156138231205.dkr.ecr.eu-central-1.amazonaws.com/backend:v1"
+          docker build -t deploy front/.
+          docker tag deploy:latest 156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1
+          docker push 156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1
+          echo "::set-output name=image::156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1"
+  
