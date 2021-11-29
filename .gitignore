@@ -1,0 +1,25 @@
+node_modules/
+.expo/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store
+.vscode
+
+front/build/
+front/node_modules
+
+.idea
+
+/database/postgres-data
+/backend/public/images/*
+/backend/package-lock.json
+!/backend/public/images/init
+!/backend/public/images/default_picture.svg
