@@ -38,10 +38,6 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t deploy front/.
-          docker tag deploy:latest 156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1
-          docker push 156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1
-          echo "::set-output name=image::156138231205.dkr.ecr.eu-central-1.amazonaws.com/front:v1"
           docker build -t deploy backend/.
           docker tag deploy:latest 156138231205.dkr.ecr.eu-central-1.amazonaws.com/backend:v1
           docker push 156138231205.dkr.ecr.eu-central-1.amazonaws.com/backend:v1
