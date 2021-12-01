@@ -22,7 +22,6 @@ router.get('/images/:id',(req, res) => {
 
 app.use("/", router);
 app.use(errorHandler);
-console.log(process.env);
 const PORT = process.env.PORT || 5000;
 const start = async () => {
   try {
