@@ -7,10 +7,12 @@ const app = express();
 const errorHandler = require("./middlewares/ErrorHandlerMiddleware");
 const fileUpload = require('express-fileupload');
 const { getFileStream } = require("./AWS/S3");
+var cors = require('cors')
 
 app.use(express.json());
 app.use(fileUpload({}));
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 router.get('/images/:id',(req, res) => {
   const key = req.params.id;
